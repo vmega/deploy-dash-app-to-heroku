@@ -1,0 +1,8 @@
+deploy to heroku:
+  script:
+    - apt-get update 
+    # - apt-get install ruby-full
+    - gem install dpl
+    - dpl --provider=heroku --app=heroku-simple-dash-app-v1 --api-key=$HEROKU_SECRET_KEY
+  only: 
+    - main 
